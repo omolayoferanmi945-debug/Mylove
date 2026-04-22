@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Iyanuoluwa ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Calligraphy fonts for the letter -->
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=DM+Serif+Display:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Ms+Madi&family=Pinyon+Script&family=주아&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#03060d;
+  --bg2:#060c1a;
+  --navy:#0a1526;
+  --blue-mid:#163460;
+  --blue:#2460b0;
+  --baby:#7ab8f0;
+  --baby-soft:#aad4f8;
+  --baby-glow:#cce8ff;
+  --cream:#eaf2fb;
+  --cream-dim:#8aaec8;
+  --parchment:#f2f7ff;
+  --ink:#0c1c2c;
+  --accent:#4ea0e0;
+  --silver:#c8d8e8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--cream);font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+
+#starfield{position:fixed;inset:0;pointer-events:none;z-index:0;}
+
+section{position:relative;z-index:1;}
+
+.divider{
+  width:100%;max-width:440px;height:1px;
+  background:linear-gradient(to right,transparent,var(--baby)66,transparent);
+  margin:0 auto;opacity:.65;
+}
+
+/* ══ HERO ══ */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:60px 24px;
+  background:radial-gradient(ellipse at 50% 58%,#163460 0%,transparent 65%);
+}
+.moon{
+  width:118px;height:118px;border-radius:50%;flex-shrink:0;
+  background:radial-gradient(circle at 35% 28%,#e8f4ff,#aad4f8 42%,#1a3a6e 76%,#03060d);
+  box-shadow:0 0 60px 24px #2460b033,0 0 140px 60px #2460b012,
+             inset -12px -10px 30px #03060d55;
+  margin-bottom:50px;
+  animation:moonFloat 7s ease-in-out infinite;
+  position:relative;
+}
+.moon::after{
+  content:'';position:absolute;top:20px;left:14px;
+  width:17px;height:17px;border-radius:50%;
+  background:#aad4f830;
+  box-shadow:30px 14px 0 7px #aad4f820,15px 44px 0 5px #aad4f818;
+}
+@keyframes moonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+
+.hero-tag{
+  font-family:'Crimson Pro',serif;font-size:clamp(10px,2vw,13px);
+  letter-spacing:.5em;text-transform:uppercase;color:var(--baby);
+  margin-bottom:20px;opacity:0;animation:fadeUp 1s .5s forwards;
+}
+.hero-name{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(48px,12vw,106px);font-weight:400;line-height:.88;
+  color:var(--cream);text-shadow:0 0 100px #2460b055;
+  opacity:0;animation:fadeUp 1s .85s forwards;
+}
+.hero-name em{
+  display:block;font-style:italic;font-size:.58em;
+  color:var(--baby-soft);
+  text-shadow:0 0 60px #7ab8f066;
+}
+.hero-sub{
+  font-family:'Italiana',serif;font-size:clamp(17px,3.5vw,25px);
+  color:var(--cream-dim);margin-top:30px;max-width:500px;line-height:1.65;
+  opacity:0;animation:fadeUp 1s 1.15s forwards;
+}
+.scroll-hint{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeUp 1s 2.4s forwards;
+}
+.scroll-hint span{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--baby);opacity:.6;}
+.scroll-arrow{width:1px;height:46px;background:linear-gradient(to bottom,var(--baby),transparent);animation:scrollPulse 1.7s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══ PHOTO ══ */
+#photo-section{padding:80px 24px;display:flex;flex-direction:column;align-items:center;gap:24px;}
+.photo-frame{
+  position:relative;max-width:320px;width:100%;
+  opacity:0;transform:translateY(40px) scale(.97);
+  transition:opacity 1s,transform 1s;
+}
+.photo-frame.visible{opacity:1;transform:translateY(0) scale(1);}
+.photo-frame::before{
+  content:'';position:absolute;inset:-3px;border-radius:8px;
+  background:linear-gradient(135deg,var(--baby-glow),var(--accent),var(--baby),var(--silver));
+  background-size:300% 300%;animation:borderSpin 4s linear infinite;z-index:-1;
+}
+@keyframes borderSpin{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.photo-frame img{width:100%;display:block;border-radius:6px;filter:contrast(1.05) brightness(.97);}
+.photo-caption{
+  font-family:'Italiana',serif;font-size:21px;color:var(--baby-soft);
+  text-align:center;opacity:0;transition:opacity 1s .45s;
+}
+.photo-frame.visible ~ .photo-caption{opacity:1;}
+
+/* ══ CAKE ══ */
+#cake-section{padding:60px 24px 80px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.section-label{
+  font-family:'Crimson Pro',serif;font-size:clamp(10px,2vw,12px);
+  letter-spacing:.48em;text-transform:uppercase;color:var(--baby);
+}
+.cake-wrap{display:flex;flex-direction:column;align-items:center;}
+.candles-row{display:flex;gap:16px;position:relative;z-index:10;}
+.candle{display:flex;flex-direction:column;align-items:center;}
+.flame-wrap{width:14px;height:30px;display:flex;align-items:flex-end;justify-content:center;}
+.flame{
+  width:10px;height:18px;
+  background:radial-gradient(ellipse at 50% 80%,#fffde0,#ffcf40 42%,#ff8800 78%,transparent);
+  border-radius:50% 50% 30% 30%/60% 60% 40% 40%;
+  box-shadow:0 0 8px 3px #ffcf4066,0 0 18px 5px #ff880033;
+  transform-origin:bottom center;
+  animation:flicker .14s ease-in-out infinite alternate;
+  transition:opacity .5s,transform .5s;
+}
+.flame.out{opacity:0;transform:scaleY(0);}
+@keyframes flicker{0%{transform:scaleX(1) scaleY(1) rotate(-2deg)}100%{transform:scaleX(.82) scaleY(1.12) rotate(2deg)}}
+.candle-body{width:12px;height:34px;border-radius:2px 2px 0 0;}
+.candle:nth-child(odd) .candle-body{background:linear-gradient(to bottom,#89c4f4,#1a4a80);}
+.candle:nth-child(even) .candle-body{background:linear-gradient(to bottom,#c8e8ff,#4a7ab0);}
+
+.cake-tier{display:flex;flex-direction:column;align-items:center;}
+.frosting{
+  height:14px;border-radius:7px 7px 0 0;
+  background:linear-gradient(to right,#d8eeff,#f0f8ff,#d8eeff);
+  position:relative;
+}
+.frosting::after{
+  content:'';position:absolute;bottom:-7px;left:0;right:0;height:13px;
+  background:
+    radial-gradient(ellipse 11px 11px at 9% 0%,#eaf6ff 50%,transparent 51%),
+    radial-gradient(ellipse 11px 11px at 27% 0%,#eaf6ff 50%,transparent 51%),
+    radial-gradient(ellipse 11px 11px at 50% 0%,#eaf6ff 50%,transparent 51%),
+    radial-gradient(ellipse 11px 11px at 73% 0%,#eaf6ff 50%,transparent 51%),
+    radial-gradient(ellipse 11px 11px at 91% 0%,#eaf6ff 50%,transparent 51%);
+}
+/* tier 1 */
+.t1{width:148px;}
+.t1 .frosting{width:148px;}
+.t1 .body{width:148px;height:64px;background:linear-gradient(to right,#0d2248,#163460 22%,#2460b0 50%,#163460 78%,#0d2248);position:relative;overflow:hidden;}
+.t1 .body::before{content:'♡  ♡  ♡';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,.22);font-size:14px;letter-spacing:8px;white-space:nowrap;}
+.t1 .base{width:160px;height:11px;background:linear-gradient(to bottom,#0a1e3c,#040c18);border-radius:0 0 3px 3px;}
+/* tier 2 */
+.t2{width:208px;margin-top:-1px;}
+.t2 .frosting{width:208px;}
+.t2 .body{width:208px;height:72px;background:linear-gradient(to right,#071020,#0e2040 18%,#1a3a70 40%,#2460b0 50%,#1a3a70 60%,#0e2040 82%,#071020);position:relative;overflow:hidden;}
+.t2 .body::before{content:'✦  Happy Birthday  ✦';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(180,220,255,.3);font-size:11px;letter-spacing:3px;white-space:nowrap;font-family:'Crimson Pro',serif;}
+.t2 .base{width:220px;height:13px;background:linear-gradient(to bottom,#091828,#040c18);border-radius:0 0 3px 3px;}
+/* tier 3 */
+.t3{width:278px;margin-top:-1px;}
+.t3 .frosting{width:278px;}
+.t3 .body{width:278px;height:78px;background:linear-gradient(to right,#0a1830,#163460 15%,#2460b0 35%,#4a90d0 50%,#2460b0 65%,#163460 85%,#0a1830);position:relative;overflow:hidden;}
+.t3 .body::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 14px,rgba(255,255,255,.03) 14px,rgba(255,255,255,.03) 15px);}
+.t3 .base{width:292px;height:15px;background:linear-gradient(to bottom,#091828,#030a14);border-radius:0 0 5px 5px;}
+
+.cake-plate{width:318px;height:15px;background:radial-gradient(ellipse at 50% 0%,#d0dce8,#a8b8c8 60%,#7888a0);border-radius:50%;margin-top:-3px;box-shadow:0 6px 28px #00000066;}
+
+.blow-btn{
+  margin-top:32px;
+  background:linear-gradient(135deg,#0d2248,#1a3a6e);
+  border:1px solid var(--baby);color:var(--cream);
+  font-family:'Italiana',serif;font-size:20px;letter-spacing:.13em;
+  padding:14px 44px;border-radius:3px;cursor:pointer;
+  transition:box-shadow .3s,background .3s;
+}
+.blow-btn:hover{box-shadow:0 0 44px var(--baby)55;}
+.blow-btn.blown{background:linear-gradient(135deg,#0d3020,#1a5030);border-color:#60c080;}
+.wish-text{
+  font-family:'DM Serif Display',serif;font-style:italic;
+  font-size:clamp(17px,3.5vw,24px);color:var(--baby-soft);
+  text-align:center;max-width:380px;line-height:1.65;
+  opacity:0;transform:scale(.92);transition:opacity .8s,transform .8s;
+  height:0;overflow:hidden;
+}
+.wish-text.show{opacity:1;transform:scale(1);height:auto;margin-top:22px;}
+.confetti-container{position:fixed;inset:0;pointer-events:none;z-index:999;}
+
+/* ══ LETTER ══ */
+#letter-section{padding:60px 24px 80px;display:flex;flex-direction:column;align-items:center;gap:22px;}
+.envelope-wrap{
+  position:relative;width:min(500px,100%);cursor:pointer;
+  opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s;
+}
+.envelope-wrap.visible{opacity:1;transform:translateY(0);}
+.envelope{
+  background:linear-gradient(160deg,#163460 0%,#0a1a30 100%);
+  border:1px solid var(--baby);border-radius:5px;padding:30px;
+  text-align:center;transition:box-shadow .4s;
+  position:relative;overflow:hidden;
+}
+.envelope:hover{box-shadow:0 0 55px var(--baby)44;}
+.envelope::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--baby-soft),transparent);}
+.envelope::after{
+  content:'';position:absolute;top:0;left:0;
+  border-left:250px solid transparent;border-right:250px solid transparent;
+  border-top:76px solid #1a3a6e44;
+  transform-origin:top center;transition:transform .5s;
+}
+.envelope-wrap.opened .envelope::after{transform:rotateX(180deg) translateY(-76px);}
+.envelope-seal{
+  width:54px;height:54px;
+  background:radial-gradient(circle at 34% 32%,var(--baby-glow),var(--baby),#1a3a6e);
+  border-radius:50%;margin:0 auto 18px;
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  box-shadow:0 0 28px var(--baby)88;
+  transition:transform .5s,opacity .5s;
+}
+.envelope-wrap.opened .envelope-seal{transform:scale(0);opacity:0;}
+.envelope-prompt{font-family:'Italiana',serif;font-size:22px;color:var(--cream-dim);transition:opacity .4s;}
+.envelope-wrap.opened .envelope-prompt{opacity:0;height:0;overflow:hidden;}
+
+.letter-paper{max-height:0;overflow:hidden;transition:max-height 2s cubic-bezier(.16,1,.3,1);width:min(560px,100%);}
+.letter-paper.open{max-height:5000px;}
+
+/* ── CALLIGRAPHY LETTER FONT ── */
+.paper-inner{
+  background:var(--parchment);
+  color:var(--ink);
+  padding:54px 48px;
+  position:relative;
+  font-family:'Ms Madi', cursive;
+  font-size:clamp(22px,3.8vw,28px);
+  line-height:2.1;
+  box-shadow:0 28px 100px #00000099,inset 0 0 80px #b0ccee18;
+  border-radius:0 0 5px 5px;
+}
+.paper-inner::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(to right,var(--blue-mid),var(--baby),var(--blue-mid));
+}
+/* blue left margin rule */
+.paper-inner::after{
+  content:'';position:absolute;top:20px;bottom:20px;left:76px;
+  width:1px;background:rgba(42,96,176,.22);
+}
+.letter-greeting{
+  font-family:'Pinyon Script', cursive;
+  font-size:clamp(30px,6vw,42px);
+  color:#0d2248;margin-bottom:28px;line-height:1.3;
+}
+.letter-p{margin-bottom:16px;}
+.letter-p em{font-style:italic;}
+.letter-close{
+  margin-top:32px;
+  font-family:'Pinyon Script', cursive;
+  font-size:clamp(24px,4.5vw,32px);color:#0d2248;line-height:1.9;
+}
+.letter-sig{
+  font-family:'Pinyon Script', cursive;
+  font-size:clamp(38px,9vw,58px);
+  color:#0d2248;margin-top:10px;line-height:1;
+}
+
+/* ══ REASONS ══ */
+#reasons1-section,#reasons2-section{padding:60px 24px 40px;max-width:640px;margin:0 auto;}
+.reasons-header{
+  font-family:'DM Serif Display',serif;font-size:clamp(24px,5.5vw,37px);
+  text-align:center;color:var(--baby-soft);margin-bottom:46px;line-height:1.3;
+  opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;
+}
+.reasons-header.visible{opacity:1;transform:translateY(0);}
+.reasons-header em{font-style:italic;color:var(--cream);}
+.reason-card{
+  display:flex;align-items:flex-start;gap:18px;padding:22px 0;
+  border-bottom:1px solid #ffffff0e;
+  opacity:0;transform:translateX(-28px);transition:opacity .7s,transform .7s;
+}
+.reason-card.visible{opacity:1;transform:translateX(0);}
+.reason-num{font-size:10px;letter-spacing:.22em;color:var(--baby);flex-shrink:0;padding-top:5px;width:28px;}
+.reason-icon{font-size:20px;flex-shrink:0;line-height:1;padding-top:3px;}
+.reason-text{font-size:clamp(14px,2.4vw,15.5px);line-height:1.8;color:var(--cream-dim);}
+.reason-text strong{display:block;font-family:'DM Serif Display',serif;font-weight:400;font-size:1.08em;color:var(--cream);margin-bottom:3px;}
+
+/* ══ VIDEO ══ */
+#video-section{
+  padding:70px 24px;display:flex;flex-direction:column;align-items:center;gap:26px;
+  background:radial-gradient(ellipse at 50% 50%,#163460 0%,transparent 68%);
+}
+.video-frame{
+  position:relative;width:min(480px,100%);border-radius:8px;overflow:hidden;
+  opacity:0;transform:translateY(32px);transition:opacity 1s,transform 1s;
+}
+.video-frame.visible{opacity:1;transform:translateY(0);}
+.video-frame::before{
+  content:'';position:absolute;inset:-3px;border-radius:10px;
+  background:linear-gradient(135deg,var(--baby-glow),var(--accent),var(--baby),var(--silver));
+  background-size:300% 300%;animation:borderSpin 4s linear infinite;z-index:-1;
+}
+@keyframes borderSpin{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.video-frame video{width:100%;display:block;border-radius:6px;background:#000;}
+.video-caption{
+  font-family:'Italiana',serif;font-size:22px;color:var(--baby-soft);
+  text-align:center;opacity:0;transition:opacity 1s .4s;max-width:420px;line-height:1.55;
+}
+.video-frame.visible ~ .video-caption{opacity:1;}
+
+/* ══ SWEET SECTION ══ */
+#us-section{padding:80px 24px;max-width:600px;margin:0 auto;display:flex;flex-direction:column;align-items:center;}
+.us-title{
+  font-family:'DM Serif Display',serif;font-size:clamp(26px,6vw,42px);
+  text-align:center;color:var(--cream);margin-bottom:58px;
+  opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;
+}
+.us-title.visible{opacity:1;transform:translateY(0);}
+.us-title em{font-style:italic;color:var(--baby-soft);}
+.timeline{position:relative;width:100%;padding-left:38px;}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--baby) 10%,var(--baby) 90%,transparent);}
+.tl-item{position:relative;margin-bottom:46px;opacity:0;transform:translateX(24px);transition:opacity .8s,transform .8s;}
+.tl-item.visible{opacity:1;transform:translateX(0);}
+.tl-dot{position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--baby);box-shadow:0 0 16px var(--accent)bb;border:2px solid var(--bg);}
+.tl-emoji{font-size:22px;margin-bottom:7px;line-height:1;}
+.tl-title{font-family:'DM Serif Display',serif;font-size:clamp(16px,3.5vw,20px);color:var(--cream);margin-bottom:7px;}
+.tl-text{font-size:clamp(13px,2.4vw,15px);color:var(--cream-dim);line-height:1.78;}
+
+/* ══ CLOSING ══ */
+#closing-section{
+  padding:60px 24px 120px;display:flex;flex-direction:column;
+  align-items:center;text-align:center;gap:28px;
+  background:radial-gradient(ellipse at 50% 85%,#163460 0%,transparent 68%);
+}
+.closing-big{
+  font-family:'DM Serif Display',serif;font-style:italic;
+  font-size:clamp(28px,6.5vw,48px);color:var(--cream);line-height:1.1;
+  opacity:0;transform:translateY(22px);transition:opacity 1s,transform 1s;
+}
+.closing-big.visible{opacity:1;transform:translateY(0);}
+.closing-big span{color:var(--baby-soft);}
+.closing-sub{
+  font-family:'Italiana',serif;font-size:clamp(16px,3vw,22px);
+  color:var(--cream-dim);max-width:490px;line-height:1.7;
+  opacity:0;transition:opacity 1s .35s;
+}
+.closing-big.visible ~ .closing-sub{opacity:1;}
+.closing-from{
+  font-family:'DM Serif Display',serif;font-style:italic;
+  font-size:clamp(15px,3vw,21px);color:var(--baby);
+  opacity:0;transition:opacity 1s .65s;
+}
+.closing-big.visible ~ * ~ .closing-from{opacity:1;}
+.hearts-row{display:flex;gap:16px;opacity:0;transition:opacity 1s .95s;}
+.closing-big.visible ~ * ~ * ~ .hearts-row{opacity:1;}
+.hb{font-size:28px;animation:hbeat 1.6s ease-in-out infinite;}
+.hb:nth-child(2){animation-delay:.28s;}
+.hb:nth-child(3){animation-delay:.54s;}
+@keyframes hbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.38)}28%{transform:scale(1)}42%{transform:scale(1.2)}}
+
+/* particles */
+.particle{position:fixed;pointer-events:none;z-index:0;font-size:13px;opacity:0;animation:pFloat linear infinite;}
+@keyframes pFloat{0%{transform:translateY(100vh) rotate(0deg);opacity:0}8%{opacity:.5}92%{opacity:.3}100%{transform:translateY(-100px) rotate(360deg);opacity:0}}
+
+@media(max-width:480px){
+  .t3{width:248px}.t3 .frosting,.t3 .body{width:248px}.t3 .base{width:262px}
+  .t2{width:185px}.t2 .frosting,.t2 .body{width:185px}.t2 .base{width:197px}
+  .t1{width:130px}.t1 .frosting,.t1 .body{width:130px}.t1 .base{width:142px}
+  .cake-plate{width:280px}
+  .envelope::after{border-left-width:200px;border-right-width:200px}
+  .paper-inner{padding:36px 22px}.paper-inner::after{left:48px}
+  .timeline{padding-left:30px}.tl-dot{left:-27px}
+}
+</style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<div class="confetti-container" id="confetti"></div>
+<div id="particles"></div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="moon"></div>
+  <p class="hero-tag">A love letter from your babe</p>
+  <h1 class="hero-name">Happy Birthday<em>Iyanuoluwa</em></h1>
+  <p class="hero-sub">Today, the whole world celebrates the day my person was born ❤️</p>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- ══ PHOTO ══ -->
+<section id="photo-section">
+  <div class="divider"></div>
+  <div class="photo-frame" id="photoFrame">
+    <img
+      src="https://raw.githubusercontent.com/omolayoferanmi945-debug/Mylove/main/IMG-20260421-WA0007.jpg"
+      alt="Iyanuoluwa — the birthday king"
+      crossorigin="anonymous"
+    >
+  </div>
+  <p class="photo-caption">My handsome birthday king 👑</p>
+  <div class="divider"></div>
+</section>
+
+<!-- ══ CAKE ══ -->
+<section id="cake-section">
+  <p class="section-label">Make a wish</p>
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(18px,4vw,28px);color:var(--cream);font-weight:400;font-style:italic;margin-bottom:34px;">Blow the candles, my love 🕯️</h2>
+  <div class="cake-wrap">
+    <div class="candles-row">
+      <div class="candle"><div class="flame-wrap"><div class="flame" id="f1"></div></div><div class="candle-body"></div></div>
+      <div class="candle"><div class="flame-wrap"><div class="flame" id="f2"></div></div><div class="candle-body"></div></div>
+      <div class="candle"><div class="flame-wrap"><div class="flame" id="f3"></div></div><div class="candle-body"></div></div>
+      <div class="candle"><div class="flame-wrap"><div class="flame" id="f4"></div></div><div class="candle-body"></div></div>
+      <div class="candle"><div class="flame-wrap"><div class="flame" id="f5"></div></div><div class="candle-body"></div></div>
+    </div>
+    <div class="cake-tier t1"><div class="frosting"></div><div class="body"></div><div class="base"></div></div>
+    <div class="cake-tier t2"><div class="frosting"></div><div class="body"></div><div class="base"></div></div>
+    <div class="cake-tier t3"><div class="frosting"></div><div class="body"></div><div class="base"></div></div>
+    <div class="cake-plate"></div>
+  </div>
+  <button class="blow-btn" id="blowBtn" onclick="blowCandles()">🌬️ Blow the Candles</button>
+  <p class="wish-text" id="wishText">Your wish has been sent to the stars ✨<br>May every good thing find its way to you.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ LETTER ══ -->
+<section id="letter-section">
+  <p class="section-label">A letter, sealed with love</p>
+  <div class="envelope-wrap" id="envelopeWrap" onclick="openEnvelope()">
+    <div class="envelope">
+      <div class="envelope-seal">💌</div>
+      <p class="envelope-prompt">Tap to open your letter ✉️</p>
+    </div>
+  </div>
+  <div class="letter-paper" id="letterPaper">
+    <div class="paper-inner">
+      <p class="letter-greeting">Happy Birthday my love, my Iyanuoluwa ❤️🥺🎉</p>
+      <p class="letter-p">Ahhh see ehn… today is not just any normal day o, today is the day a whole spec was born 😌😂 The day my person entered this world and unknowingly prepared himself to come and deal with me for life. Honestly, you deserve an award for that alone 🏆😂</p>
+      <p class="letter-p">First of all, I just want to say thank you to God for your life. Thank you for keeping you, protecting you, and guiding you to me — yes, to <em>ME</em> specifically 😌 Because tell me why out of all the people in this world, it is you that my heart decided to choose? And I'm so glad it did.</p>
+      <p class="letter-p">Iyanuoluwa, loving you has been one of the easiest and best things I've ever done. In almost one year of being together, you've shown me what it means to be cared for, supported, and truly valued. You didn't just come into my life — you became a part of me.</p>
+      <p class="letter-p">You're not just my boyfriend, Iyanuoluwa. You're my best friend, my safe place, my happiness, my peace. You're the person I want to talk to first when something good happens, and the same person I run to when things are not okay.</p>
+      <p class="letter-p">On your birthday, I just want you to know how special you are — not just to me, but to everyone around you. You deserve happiness, success, peace, and every good thing life has to offer. And I pray this new age brings you closer to your dreams and fills your life with so much joy.</p>
+      <p class="letter-p">Thank you for loving me the way you do. Thank you for choosing me every day. Thank you for being <em>YOU.</em></p>
+      <p class="letter-p">And don't forget… no matter how old you get, you're still my baby 😌❤️😂</p>
+      <div class="letter-close">I love you so so much, Iyanuoluwa 💕<br>Happy Birthday once again, my love 🎂</div>
+      <div class="letter-sig">Always yours ❤️</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ REASONS PART 1 ══ -->
+<section id="reasons1-section">
+  <h2 class="reasons-header" id="r1header">Why I love you — <em>Part I</em></h2>
+  <div class="reason-card" id="rc1">
+    <span class="reason-num">01</span><span class="reason-icon">🛡️</span>
+    <p class="reason-text"><strong>You make me feel safe</strong>No matter how the world is doing outside, with you I'm okay. That kind of peace is rare and I don't take it for granted for even a second.</p>
+  </div>
+  <div class="reason-card" id="rc2">
+    <span class="reason-num">02</span><span class="reason-icon">🕊️</span>
+    <p class="reason-text"><strong>You are my peace</strong>Talking to you or just being with you calms me down completely. You are my soft landing in this loud, stressful world.</p>
+  </div>
+  <div class="reason-card" id="rc3">
+    <span class="reason-num">03</span><span class="reason-icon">👂</span>
+    <p class="reason-text"><strong>You actually listen to me</strong>Even when I'm talking nonsense or rambling without direction. You make me feel genuinely heard — and that means everything 😭</p>
+  </div>
+  <div class="reason-card" id="rc4">
+    <span class="reason-num">04</span><span class="reason-icon">⏳</span>
+    <p class="reason-text"><strong>Your patience with me</strong>Between my moods, my overthinking, my random silence, and my "I'm fine" that is not really fine — you still stay, still try, still care. That one is NOT a small thing o.</p>
+  </div>
+</section>
+
+<!-- ══ VIDEO ══ -->
+<section id="video-section">
+  <p class="section-label">Us 🎥</p>
+  <div class="video-frame" id="videoFrame">
+    <video controls playsinline preload="metadata">
+      <source src="https://raw.githubusercontent.com/omolayoferanmi945-debug/Mylove/main/VID-20260421-WA0006.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </div>
+  <p class="video-caption">Look at us 🥺 This is my favourite kind of happy ❤️</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ REASONS PART 2 ══ -->
+<section id="reasons2-section">
+  <h2 class="reasons-header" id="r2header">Why I love you — <em>Part II</em></h2>
+  <div class="reason-card" id="rc5">
+    <span class="reason-num">05</span><span class="reason-icon">🌟</span>
+    <p class="reason-text"><strong>You believe in me</strong>Sometimes you see strength in me that I can't even see yet. You push me to be better even when I'm the one doubting myself. That is a gift.</p>
+  </div>
+  <div class="reason-card" id="rc6">
+    <span class="reason-num">06</span><span class="reason-icon">💛</span>
+    <p class="reason-text"><strong>You make me happy in the simplest ways</strong>It's not always about big things — it's the small moments, the conversations, the laughter, the way you just exist in my life.</p>
+  </div>
+  <div class="reason-card" id="rc7">
+    <span class="reason-num">07</span><span class="reason-icon">😂</span>
+    <p class="reason-text"><strong>You survived my wahala for almost a year</strong>Without running away. That alone proves you are strong, resilient, and truly meant for me 😌❤️</p>
+  </div>
+  <div class="reason-card" id="rc8">
+    <span class="reason-num">08</span><span class="reason-icon">✨</span>
+    <p class="reason-text"><strong>You are simply YOU</strong>Your heart, your personality, your presence — everything about you feels right to me. And I wouldn't change a single thing.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ SWEET SECTION ══ -->
+<section id="us-section">
+  <h2 class="us-title" id="usTitle">Little things that <em>remind me of you</em></h2>
+  <div class="timeline">
+    <div class="tl-item" id="tl1">
+      <div class="tl-dot"></div>
+      <div class="tl-emoji">☀️</div>
+      <p class="tl-title">Every morning</p>
+      <p class="tl-text">The first thing I think about when I wake up is you. Not my phone, not the time — you. That says everything.</p>
+    </div>
+    <div class="tl-item" id="tl2">
+      <div class="tl-dot"></div>
+      <div class="tl-emoji">🎵</div>
+      <p class="tl-title">Certain songs</p>
+      <p class="tl-text">There are songs I can't listen to without smiling now because they sound like how being with you feels. You've ruined music for me in the best way 😂</p>
+    </div>
+    <div class="tl-item" id="tl3">
+      <div class="tl-dot"></div>
+      <div class="tl-emoji">🌙</div>
+      <p class="tl-title">Late nights</p>
+      <p class="tl-text">Those conversations that go on way longer than they were supposed to. Those are the ones I treasure the most.</p>
+    </div>
+    <div class="tl-item" id="tl4">
+      <div class="tl-dot"></div>
+      <div class="tl-emoji">😂</div>
+      <p class="tl-title">Anything funny</p>
+      <p class="tl-text">Whenever something makes me laugh, my first instinct is to share it with you. You're the person I want to laugh with forever.</p>
+    </div>
+    <div class="tl-item" id="tl5">
+      <div class="tl-dot"></div>
+      <div class="tl-emoji">🙏</div>
+      <p class="tl-title">When I pray</p>
+      <p class="tl-text">I thank God for you every single time. Because the way you came into my life — that was not a coincidence. That was God being intentional about us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLOSING ══ -->
+<section id="closing-section">
+  <div class="divider"></div>
+  <p class="closing-big" id="closingBig">Happy Birthday,<br><span>Iyanuoluwa</span> 🎂</p>
+  <p class="closing-sub">You deserve every single good thing this world has to offer. May this new age be your best one yet — full of joy, peace, success, and love. I'm so proud of you. I'm so grateful for you.</p>
+  <p class="closing-from">— With everything I have, always. Your girl ❤️</p>
+  <div class="hearts-row"><span class="hb">❤️</span><span class="hb">🥺</span><span class="hb">❤️</span></div>
+  <div class="divider" style="margin-top:16px;opacity:.28;"></div>
+  <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--baby);opacity:.5;letter-spacing:.25em;">Made with love, for you ✦</p>
+</section>
+
+<script>
+/* ── STARFIELD ── */
+const canvas=document.getElementById('starfield'),ctx=canvas.getContext('2d');
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
+resize();addEventListener('resize',resize);
+const stars=Array.from({length:200},()=>({
+  x:Math.random(),y:Math.random(),
+  r:Math.random()*1.4+.2,
+  o:Math.random()*.65+.1,
+  sp:Math.random()*.003+.001
+}));
+function drawStars(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const t=Date.now()*.001;
+  stars.forEach(s=>{
+    const o=s.o*(.45+.55*Math.sin(t*s.sp*60+s.x*100));
+    ctx.beginPath();
+    ctx.arc(s.x*canvas.width,s.y*canvas.height,s.r,0,Math.PI*2);
+    /* mix of white and baby blue stars */
+    ctx.fillStyle=s.x>.5?`rgba(170,212,248,${o})`:`rgba(220,234,248,${o})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+
+/* ── PARTICLES ── */
+const pc=document.getElementById('particles');
+['✦','♡','·','✿','✧','◦','❋'].forEach((sym,i)=>{
+  for(let j=0;j<3;j++){
+    const p=document.createElement('div');p.className='particle';p.textContent=sym;
+    p.style.cssText=`left:${Math.random()*100}vw;animation-duration:${14+Math.random()*20}s;animation-delay:${Math.random()*18}s;color:${i%2===0?'#7ab8f055':'#aad4f844'};`;
+    pc.appendChild(p);
+  }
+});
+
+/* ── CANDLES ── */
+let blown=false;
+function blowCandles(){
+  if(blown)return;blown=true;
+  [1,2,3,4,5].forEach((n,i)=>setTimeout(()=>document.getElementById('f'+n).classList.add('out'),i*90));
+  const btn=document.getElementById('blowBtn');btn.textContent='🌟 Wish Made!';btn.classList.add('blown');
+  setTimeout(()=>document.getElementById('wishText').classList.add('show'),700);
+  launchConfetti();
+}
+function launchConfetti(){
+  const con=document.getElementById('confetti');
+  const colors=['#7ab8f0','#aad4f8','#cce8ff','#4ea0e0','#c8d8e8','#ffffff'];
+  for(let i=0;i<90;i++){
+    const d=document.createElement('div'),sz=6+Math.random()*6;
+    d.style.cssText=`position:absolute;left:${Math.random()*100}%;top:-12px;width:${sz}px;height:${sz}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>.5?'50%':'2px'};animation:cfall ${1.5+Math.random()*2}s ${Math.random()*.8}s ease-in forwards;`;
+    con.appendChild(d);setTimeout(()=>d.remove(),4000);
+  }
+}
+const cs=document.createElement('style');
+cs.textContent='@keyframes cfall{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(600deg);opacity:0}}';
+document.head.appendChild(cs);
+
+/* ── ENVELOPE ── */
+let envOpened=false;
+function openEnvelope(){
+  if(envOpened)return;envOpened=true;
+  document.getElementById('envelopeWrap').classList.add('opened');
+  setTimeout(()=>document.getElementById('letterPaper').classList.add('open'),450);
+}
+
+/* ── SCROLL OBSERVERS ── */
+function obs(id,delay){
+  const el=document.getElementById(id);if(!el)return;
+  new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),delay||0);
+    });
+  },{threshold:.15}).observe(el);
+}
+['photoFrame','envelopeWrap','r1header','r2header','usTitle','closingBig','videoFrame'].forEach(id=>obs(id,0));
+['rc1','rc2','rc3','rc4'].forEach((id,i)=>obs(id,i*110));
+['rc5','rc6','rc7','rc8'].forEach((id,i)=>obs(id,i*110));
+['tl1','tl2','tl3','tl4','tl5'].forEach((id,i)=>obs(id,i*125));
+</script>
+</body>
+</html>
